@@ -1,6 +1,6 @@
 public Spaceship d = new Spaceship();
 public Star [] s = new Star[200];
-ArrayList <Astroids> a = new ArrayList <Astroids>();
+public ArrayList <Astroids> a = new ArrayList <Astroids>();
 public void setup()
 {
   size(500, 500);
