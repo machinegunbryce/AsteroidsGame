@@ -8,12 +8,9 @@ public void setup()
     s[i] = new Star();
   }
 
-  a.add(new Astroids());
-  a.add(new Astroids());
-  a.add(new Astroids());
-  a.add(new Astroids());
-  a.add(new Astroids());
-  a.add(new Astroids());
+  for(int i =0; i < 10; i++){
+    a.add(new Astroids());
+  }
 }
 public void draw()
 {
@@ -25,9 +22,14 @@ public void draw()
   for (int i = 0; i < a.size(); i++) {
     a.get(i).move();
     a.get(i).show();
+  if(a.get(i).myXspeed==0){
+    a.get(i).accelerate(.2);
+  }
     float p = dist((float)d.getX(), (float)d.getY(), (float)a.get(i).getX(),(float) a.get(i).getY());
-    if(p<40)
+    if(p<40){
      a.remove(i);
+     i--;
+    }
   }
 
   d.move();
